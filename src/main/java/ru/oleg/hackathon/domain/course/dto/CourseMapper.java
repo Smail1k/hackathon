@@ -6,7 +6,7 @@ import ru.oleg.hackathon.data.models.Course;
 
 @Component
 @AllArgsConstructor
-public record CourseMapper() {
+public class CourseMapper {
     public CourseOut mapToCourseOut(Course course) {
 
         return new CourseOut(

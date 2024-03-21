@@ -27,7 +27,7 @@ import java.util.Properties;
 @ComponentScan("ru.oleg.hackathon")
 @PropertySource("classpath:hibernate.properties")
 @EnableTransactionManagement
-@EnableJpaRepositories("ru.oleg.hackathon.repositories")
+@EnableJpaRepositories("ru.oleg.hackathon.data.repositories")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
@@ -49,14 +49,6 @@ public class SpringConfig implements WebMvcConfigurer {
         templateResolver.setSuffix(".html");
         templateResolver.setCharacterEncoding("UTF-8");
         return templateResolver;
-    }
-
-    @Bean
-    public SpringTemplateEngine templateEngine() {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver());
-        templateEngine.setEnableSpringELCompiler(true);
-        return templateEngine;
     }
 
 

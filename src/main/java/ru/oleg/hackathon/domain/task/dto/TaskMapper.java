@@ -6,7 +6,7 @@ import ru.oleg.hackathon.data.models.Task;
 
 @AllArgsConstructor
 @Component
-public record TaskMapper() {
+public class TaskMapper {
     public TaskOut mapToTaskOut(Task task) {
 
         return new TaskOut(
