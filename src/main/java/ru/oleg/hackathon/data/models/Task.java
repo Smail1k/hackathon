@@ -29,7 +29,7 @@ public class Task {
     @JoinColumn(name = "course_id", referencedColumnName = "id")
     private Course course;
 
-    @OneToMany(mappedBy = "team",
+    @OneToMany(mappedBy = "task",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private Set<UserTask> users = new HashSet<>();

@@ -24,7 +24,7 @@ public class Course {
     @Column
     private String description;
 
-    @OneToMany(mappedBy = "user",
+    @OneToMany(mappedBy = "course",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private Set<UserCourse> members;
