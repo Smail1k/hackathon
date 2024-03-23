@@ -1,5 +1,6 @@
 package ru.oleg.hackathon.controllers.user;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,10 @@ import ru.oleg.hackathon.domain.user.UserService;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/users")
 @AllArgsConstructor
+@Tag(name = "2. Пользователи")
 public class UserController {
     private UserService userService;
 
@@ -35,7 +37,7 @@ public class UserController {
         return ResponseEntity.ok(userService.findMe(authentication));
     }
 
-    @GetMapping("{username}")
+    @GetMapping("/{username}")
     public ResponseEntity<UserOut> getUserByUsername(final @PathVariable String username) {
         return ResponseEntity.ok(userService.findUserByUsername(username));
     }

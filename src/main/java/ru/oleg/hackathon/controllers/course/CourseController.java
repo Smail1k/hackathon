@@ -1,10 +1,11 @@
 package ru.oleg.hackathon.controllers.course;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @AllArgsConstructor
+@Tag(name = "3. Курсы")
 public class CourseController {
 }

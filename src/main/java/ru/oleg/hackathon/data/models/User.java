@@ -44,9 +44,7 @@ public class User {
     private String lastName;
 
     @Column(length = 10)
-    @NotEmpty
-    @NotBlank
-    private Set<Role> role;
+    private Role role;
 
     @OneToMany(mappedBy = "user")
     private Set<UserCourse> courses;

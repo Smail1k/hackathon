@@ -1,5 +1,6 @@
 package ru.oleg.hackathon.controllers.auth;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.security.auth.message.AuthException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import ru.oleg.hackathon.domain.auth.dto.*;
 @RestController
 @RequestMapping("/auth")
 @AllArgsConstructor
+@Tag(name = "1. Авторизация")
 public class AuthController {
 
     private final AuthService authService;

@@ -92,9 +92,10 @@ public class AuthService {
     public void register(final RegisterIn registerIn) {
         final User user = new User();
         user.setEmail(registerIn.email());
-        if (registerIn.username() != null) {
-            user.setUsername(registerIn.username());
-        }
+        user.setUsername(registerIn.username());
+        user.setFirstName(registerIn.firstName());
+        user.setLastName(registerIn.lastName());
+        user.setRole(Role.STUDENT);
         user.setPassword(passwordEncoder.encode(registerIn.password()));
 
         userRepository.save(user);
