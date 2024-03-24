@@ -23,8 +23,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<SimpleUserOut>> getAllUser(){
-        return ResponseEntity.ok(userService.findAll());
+    public ResponseEntity<List<SimpleUserOut>> getAllUser(final @NotNull Authentication authentication){
+        return ResponseEntity.ok(userService.findAll(authentication));
     }
 
     @GetMapping("/{userId}")

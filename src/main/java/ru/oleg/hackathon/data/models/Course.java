@@ -22,8 +22,10 @@ public class Course {
     private String name;
 
     @Column
+    @Size(max = 300)
     private String description;
 
+    // TODO изменить CascadeType, иначе delete course = delete all members
     @OneToMany(mappedBy = "course",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
@@ -31,4 +33,8 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     private Set<Task> tasks;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    private User author;
 }

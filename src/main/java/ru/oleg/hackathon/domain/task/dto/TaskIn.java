@@ -9,6 +9,7 @@ public record TaskIn(
         @NotBlank(message = "Название задачи не может быть пустым")
         @Size(min = 1, max = 30)
         String name,
+        @Size(max = 300)
         String description,
         @NotNull
         long courseId) {

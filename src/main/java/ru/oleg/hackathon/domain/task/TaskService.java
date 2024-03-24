@@ -56,7 +56,7 @@ public class TaskService {
         UserCourseKey userCourseKey = new UserCourseKey(user.getId(), course.getId());
 
         userCourseRepository.findById(userCourseKey)
-                .orElseThrow(() -> new NotFoundException("Связь курса с пользователем не найдена"));
+                .orElseThrow(() -> new NotFoundException("Пользователь не связан с данным курсом"));
 
         Task task = new Task();
 

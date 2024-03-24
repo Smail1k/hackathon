@@ -53,5 +53,8 @@ public class User {
     private Set<UserTask> tasks;
 
     @OneToMany(mappedBy = "author")
-    private Set<Task> authorTasks;
+    private Set<Task> myTasks;
+
+    @OneToMany(mappedBy = "author")
+    private Set<Course> myCourse;
 }
